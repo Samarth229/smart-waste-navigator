@@ -1,73 +1,159 @@
-# Welcome to your Lovable project
+🗑️ Smart Waste Navigator
 
-## Project info
+A smart, IoT-powered waste monitoring and collection system that helps cities prevent overflowing dustbins by notifying garbage collectors when bins are full and guiding them to the fastest route.
 
-**URL**: https://lovable.dev/projects/69e87a18-2a00-49e5-a8d9-0d44e436b45e
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-## How can I edit this code?
+📌 Overview
 
-There are several ways of editing your application.
+Smart Waste Navigator is an intelligent waste management solution integrating IoT sensors, web interface, Firebase backend, and real-time alerts to optimize garbage collection in urban areas.
+This system detects when a dustbin is full, automatically notifies the nearest garbage vehicle, and generates the shortest route using integrated map services. It improves hygiene, reduces manual monitoring, and increases collection efficiency.
 
-**Use Lovable**
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/69e87a18-2a00-49e5-a8d9-0d44e436b45e) and start prompting.
+🎯 Features
 
-Changes made via Lovable will be committed automatically to this repo.
+🛢️ Waste Monitoring
 
-**Use your preferred IDE**
+Real-time dustbin fill-level detection using IoT sensors
+Automatic synchronization with Firebase Cloud Firestore
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🔔 Real-Time Alerts
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Notifies garbage collectors when a bin reaches the threshold
+Push notifications & in-app alerts
 
-Follow these steps:
+🗺️ Smart Navigation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Google Maps integration
+Shows shortest route to the dustbin when a collector taps “Accept”
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+💻 Frontend (React + Vite + ShadCN)
 
-# Step 3: Install the necessary dependencies.
-npm i
+Clean, responsive UI
+Active alert panel
+Firebase integration
+Real-time status updates
+☁️ Backend (Firebase Functions)
+Handles sensor data updates
+Trigger notifications
+API for bin updates & collector status
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+🧱 Tech Stack
+
+Frontend
+React
+Vite
+TypeScript
+ShadCN UI
+TailwindCSS
+Firebase Web SDK
+Backend
+Firebase Cloud Functions (Node.js)
+Firestore Database
+Firebase Authentication
+Firebase Cloud Messaging
+Hardware (IoT Prototype)
+Ultrasonic sensor (HC-SR04)
+ESP8266 / ESP32
+Wi-Fi module
+Power module
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+📂 Project Structure
+smart-waste-navigator/
+│
+├── public/
+│   └── firebase-messaging-sw.js
+│
+├── src/
+│   ├── main.tsx
+│   ├── app.tsx
+│   ├── firebase.ts
+│   ├── notifications.ts
+│   ├── binListener.ts
+│   └── components/
+│
+├── functions/
+│   ├── index.js
+│   ├── package.json
+│   └── package-lock.json
+│
+├── .firebaserc
+├── firebase.json
+├── package.json
+└── README.md
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+🚀 How It Works
+
+1️⃣ Data Collection
+
+IoT sensor measures dustbin fill-level and sends data to Firebase.
+
+2️⃣ Cloud Processing
+
+Cloud Functions read the data → checks fill percentage → triggers notifications.
+
+3️⃣ Garbage Collector App
+
+Collector receives real-time alert → clicks “Accept” → app opens Google Maps with the shortest path.
+
+4️⃣ Completion Update
+
+Collector marks bin as emptied → system resets fill-level.
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+⚙️ Getting Started (Local Setup)
+
+1. Clone the repo
+git clone https://github.com/Samarth229/smart-waste-navigator.git
+cd smart-waste-navigator
+
+2. Install dependencies
+npm install
+
+3. Start the frontend
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+4. Deploy Cloud Functions (optional)
+firebase deploy --only functions
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+5. 🔌 IoT Device Data Format
 
-**Use GitHub Codespaces**
+Your ESP device should send JSON like:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+{
+  "binId": "bin_01",
+  "fillLevel": 85
+}
 
-## What technologies are used for this project?
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-This project is built with:
+🎯 Future Enhancements
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Live truck tracking
+Route optimization for multiple bins
+AI-based waste prediction
+Admin dashboard with analytics
+Support for multiple collection fleets
 
-## How can I deploy this project?
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-Simply open [Lovable](https://lovable.dev/projects/69e87a18-2a00-49e5-a8d9-0d44e436b45e) and click on Share -> Publish.
+🤝 Contributing
 
-## Can I connect a custom domain to my Lovable project?
+Pull requests are welcome!
+Open issues for bugs, suggestions, or improvements.
 
-Yes, you can!
+📜 License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+MIT License © 2025 Samarth Kadam
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+🧑‍💻 Author
+
+Samarth Kadam
+3rd Year CSE – VIT Bhopal
+GitHub: Samarth229
